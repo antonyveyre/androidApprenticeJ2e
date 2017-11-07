@@ -1,4 +1,4 @@
-package com.example.user.supinf.model;
+package com.example.user.myapplication.model;
 
 import java.util.Random;
 
@@ -13,7 +13,7 @@ public class Game {
     private int counter;
     private int maxValue;
 
-public Game (){}
+public Game(){}
 
     public void initGame(int _maxValue){
 

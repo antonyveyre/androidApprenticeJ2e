@@ -1,36 +1,28 @@
-package com.example.user.paint;
+package com.example.user.myapplication;
 
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-
 import android.content.Context;
-
 import android.graphics.Bitmap;
-
 import android.graphics.Canvas;
-
 import android.graphics.Color;
-
 import android.graphics.Paint;
-
 import android.graphics.Path;
-
-import android.support.v7.app.AppCompatActivity;
-
 import android.os.Bundle;
-
 import android.text.Layout;
+import android.util.Log;
 import android.view.MotionEvent;
-
 import android.view.View;
-
-import android.widget.LinearLayout;
+import android.widget.Button;
 import android.widget.RelativeLayout;
+
+
 
 
 public class DrawingActivity extends Activity {
 
+Button btn1;
 
 
     private Layout mainLayout;
@@ -67,6 +59,8 @@ public class DrawingActivity extends Activity {
         mPaint.setStrokeWidth(12);
 
 
+//        btn1 = (Button) findViewById(R.id.paintBtn1);
+
 
         // Question 3 il faudra modifier cette ligne
 
@@ -76,8 +70,31 @@ public class DrawingActivity extends Activity {
 
 
 
+        findViewById(R.id.paintBtn1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("erase", "click on erase");
+                mPaint.setColor(Color.GREEN);
+                dv.mCanvas.drawColor(Color.WHITE);
 
 
+            }
+        });
+
+        findViewById(R.id.paintBtnRd).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPaint.setColor(Color.RED);
+            }
+        });
+
+
+        findViewById(R.id.paintBtnBlu).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPaint.setColor(Color.BLUE);
+            }
+        });
 
     }
 

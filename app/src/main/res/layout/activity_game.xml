@@ -4,16 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.user.supinf.GameActivity">
+    tools:context="com.example.user.myapplication.GameActivity">
 
+
+    <TextView
+        android:id="@+id/bnjr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/tV1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/input"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/bnjr"
+        android:layout_marginTop="16dp"
         android:text="Saisir un nombre entre 1 et 100" />
 
     <EditText
@@ -24,7 +31,8 @@
         android:layout_below="@+id/tV1"
         android:layout_marginTop="12dp"
         android:ems="10"
-        android:inputType="phone" />
+        android:inputType="phone"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:id="@+id/resultat"
@@ -34,7 +42,8 @@
         android:layout_below="@+id/progressBar"
         android:layout_marginTop="26dp"
 
-        android:text="" />
+        android:text=""
+        android:layout_alignParentLeft="true" />
 
     <Button
         android:id="@+id/btn"
@@ -42,14 +51,16 @@
         android:layout_height="wrap_content"
         android:text="Button"
         android:layout_above="@+id/progressBar"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
 
     <TextView
         android:id="@+id/history"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/resultat"/>
+        android:layout_below="@+id/resultat"
+        android:layout_alignParentLeft="true" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -60,5 +71,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/input"
         android:layout_marginTop="23dp"
-        android:max="8" />
+        android:max="8"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true" />
 </RelativeLayout>

@@ -1,8 +1,9 @@
-package com.example.user.supinf;
+package com.example.user.myapplication;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,7 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.user.supinf.model.Game;
+import com.example.user.myapplication.model.Game;
 
 public class GameActivity extends Activity implements View.OnClickListener {
 
@@ -28,6 +29,9 @@ public class GameActivity extends Activity implements View.OnClickListener {
     EditText input;
     TextView hist;
     ProgressBar prog;
+    TextView bonjour;
+    String s ="";
+
 
 
     @Override
@@ -52,13 +56,21 @@ public class GameActivity extends Activity implements View.OnClickListener {
         hist = (TextView) findViewById(R.id.history);
         prog = (ProgressBar) findViewById(R.id.progressBar);
         b.setOnClickListener(this);
+        s = getIntent().getStringExtra(Exo1activity.MSG_TO_GAME);
+        Log.d("intent",s);
+        s = "Bonjour " + s;
+        bonjour = (TextView) findViewById(R.id.bnjr);
         this.reset();
+
+
+
     }
 
 
     public void reset() {
         game = new Game();
         game.initGame(100);
+
 
 /*
         counter = 0;
@@ -69,6 +81,8 @@ public class GameActivity extends Activity implements View.OnClickListener {
         resultat.setText("");
         hist.setText("");
         prog.setProgress(game.getCounter());
+
+        bonjour.setText(s);
 
     }
 
@@ -134,13 +148,19 @@ public class GameActivity extends Activity implements View.OnClickListener {
         builder.setNegativeButton("Fin", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                finish();
+                stopTheGame();
             }
         });
         AlertDialog gain = builder.create();
         gain.show();
     }
 
+    private void stopTheGame(){
+        Intent result = new Intent();
+        result.putExtra("res","end game");
+        setResult(RESULT_OK,result);
+        finish();
+    }
 
 }
 

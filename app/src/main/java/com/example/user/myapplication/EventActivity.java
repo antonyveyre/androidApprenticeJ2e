@@ -10,7 +10,15 @@ import android.view.accessibility.AccessibilityManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+
+
+
+// Activity qui montre les divers façons d'ajout de OnClicListener.
+
+
 public class EventActivity extends AppCompatActivity implements  View.OnClickListener{
+
+
 
 
 

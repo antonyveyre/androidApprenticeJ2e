@@ -1,7 +1,8 @@
-package com.example.user.supinf;
+package com.example.user.myapplication;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -26,13 +27,30 @@ public class FingerActivity extends Activity implements View.OnTouchListener {
         setContentView(R.layout.activity_finger);
         myLayout = findViewById(R.id.relatLay);
         myTextField2show = findViewById(R.id.txt);
+        Log.d("fingerActivity","fin on create");
+        myLayout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                myTextField2show.setText(String.format("finger is on X = %f y = %f ",event.getX(),event.getY()));
+                Log.d("onTouch","onTouch");
+                Log.d("onTouchMove",String.format("finger is on X = %f y = %f ",event.getX(),event.getY()));
+                return false;
+
+            }
+        });
+
 
     }
+
+
+
 
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         myTextField2show.setText(String.format("finger is on X = %d y = %d ",event.getX(),event.getY()));
+        Log.d("onTouch","onTouch");
+        Log.d("onTouchMove",String.format("finger is on X = %d y = %d ",event.getX(),event.getY()));
         return false;
     }
 }

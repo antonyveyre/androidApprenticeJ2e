@@ -6,40 +6,95 @@
     android:layout_height="match_parent"
     tools:context="com.example.user.myapplication.Exo1activity">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Button"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Button"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="116dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Button"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="216dp" />
+            <EditText
+                android:id="@+id/editName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Button"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="315dp" />
+            <Button
+                android:id="@+id/btnGmName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Button" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnGm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Game" />
+
+        <Button
+            android:id="@+id/btnPnt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Paint"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="315dp" />
+
+        <Button
+            android:id="@+id/btnFinger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Finger"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="315dp" />
+
+        <Button
+            android:id="@+id/btnLst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="List"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="216dp" />
+
+        <Button
+            android:id="@+id/btnMainAssync"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="AssyncTask" />
+
+        <Button
+            android:id="@+id/btnMainHTTP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HttpRequest" />
+
+        <Button
+            android:id="@+id/btnMainPicasso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Picasso" />
+
+        <Button
+            android:id="@+id/btnMainAlbum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Album" />
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
