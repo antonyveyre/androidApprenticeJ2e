@@ -31,7 +31,7 @@
             android:name=".FingerActivity"
             android:exported="true" />
         <activity
-            android:name=".ListActivity"
+            android:name=".todolist.ListActivity"
             android:exported="true" />
         <activity
             android:name=".DrawingActivity"
@@ -39,7 +39,8 @@
         <activity android:name=".ThreadsActivity" />
         <activity android:name=".HttprequestActivity" />
         <activity android:name=".PicassoActivity" />
-        <activity android:name=".AlbumActivity"></activity>
+        <activity android:name=".albumpackage.AlbumActivity" />
+        <activity android:name=".mysqlite.SqliteActivity"></activity>
     </application>
 
 </manifest>

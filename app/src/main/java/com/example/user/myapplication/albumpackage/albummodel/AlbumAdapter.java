@@ -1,7 +1,6 @@
-package com.example.user.myapplication.model;
+package com.example.user.myapplication.albumpackage.albummodel;
 
 import android.content.Context;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +8,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.user.myapplication.R;
+import com.example.user.myapplication.albumpackage.albummodel.Album;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

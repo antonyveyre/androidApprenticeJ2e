@@ -1,17 +1,13 @@
-package com.example.user.myapplication;
+package com.example.user.myapplication.albumpackage;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
-import android.widget.ListView;
 
-import com.example.user.myapplication.model.Album;
-import com.example.user.myapplication.model.AlbumAdapter;
+import com.example.user.myapplication.albumpackage.albummodel.Album;
+import com.example.user.myapplication.albumpackage.albummodel.AlbumAdapter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
@@ -20,47 +16,32 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Created by user on 07/11/17.
+ */
 
-public class AlbumActivity extends AppCompatActivity {
-
-    private AlbumAdapter adapter;
-    ArrayList<Album> myAlbum;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_album);
-        myAlbum = new ArrayList<>();
+public class AlbumTask extends AsyncTask<Void, Void, String>   {
 
 
-/*        Album a1 = new Album( "lkj1","lkj1");
-        Album a2 = new Album( "lkj2","lkj2");
-        Album a3 = new Album( "lkj3","lkj3");
-        Album a4 = new Album( "lkj4","lkj4");
-        Album a5 = new Album( "lkj5","lkj5");
-
-
-        myAlbum.add(a1);
-        myAlbum.add(a2);
-        myAlbum.add(a3);
-        myAlbum.add(a4);
-        myAlbum.add(a5);*/
-
-        adapter = new AlbumAdapter(this,myAlbum);
-        ListView lv = (ListView) findViewById(R.id.albumLv);
-        lv.setAdapter(adapter);
-        AlbumTask at = (AlbumTask) new AlbumTask(adapter,this);
-        at.execute();
-        lv.setAdapter(at.albumAdapter);
-        at.albumAdapter.notifyDataSetChanged();
-
-    }
-
-    public class AlbumTask extends AsyncTask<Void, Void, String> {
 
         private static final String TAG = "AlbumTask";
         private Context context;
-        private AlbumAdapter albumAdapter;
+        private AssyncResponse assyncResponse;
+
+        public AlbumTask(AssyncResponse _assyncResponse){
+            this.assyncResponse = _assyncResponse;
+        }
+
+
+    public AlbumAdapter getAlbumAdapter() {
+        return albumAdapter;
+    }
+
+    public void setAlbumAdapter(AlbumAdapter albumAdapter) {
+        this.albumAdapter = albumAdapter;
+    }
+
+    private AlbumAdapter albumAdapter;
         public AlbumTask(AlbumAdapter albumAdapter, Context context) {
             this.context = context;
             this.albumAdapter = albumAdapter;
@@ -96,7 +77,7 @@ public class AlbumActivity extends AppCompatActivity {
                     connection.disconnect();
                 }
             }
-        return result.toString();
+            return result.toString();
         }
 
         @Override
@@ -114,8 +95,8 @@ public class AlbumActivity extends AppCompatActivity {
 //
                 Log.d(TAG,list.toString());
                 Log.d(TAG,result);
-               // albumAdapter.addAll(list);
-                myAlbum.addAll(list);
+                // albumAdapter.addAll(list);
+                albumAdapter.addAll(list);
                 albumAdapter.notifyDataSetChanged();
                 //albumAdapter.notifyDataSetChanged();
             }catch(Exception e){
@@ -124,5 +105,5 @@ public class AlbumActivity extends AppCompatActivity {
         }
 
 
-    }
+
 }

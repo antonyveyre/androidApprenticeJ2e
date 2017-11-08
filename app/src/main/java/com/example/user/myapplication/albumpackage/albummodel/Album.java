@@ -1,4 +1,4 @@
-package com.example.user.myapplication.model;
+package com.example.user.myapplication.albumpackage.albummodel;
 
 /**
  * Created by user on 06/11/17.

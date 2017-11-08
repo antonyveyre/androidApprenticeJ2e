@@ -1,4 +1,4 @@
-package com.example.user.myapplication.model;
+package com.example.user.myapplication.todolist.todolistmodel;
 
 import android.content.Context;
 import android.util.Log;
@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.user.myapplication.R;
+import com.example.user.myapplication.todolist.todolistmodel.Todo;
 
 import java.util.ArrayList;
 

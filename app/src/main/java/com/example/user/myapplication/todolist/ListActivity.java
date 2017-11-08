@@ -1,23 +1,17 @@
-package com.example.user.myapplication;
+package com.example.user.myapplication.todolist;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.example.user.myapplication.model.Todo;
-import com.example.user.myapplication.model.TodoAdapter;
+import com.example.user.myapplication.R;
+import com.example.user.myapplication.todolist.todolistmodel.Todo;
+import com.example.user.myapplication.todolist.todolistmodel.TodoAdapter;
 
 import java.util.ArrayList;
-
-import static com.example.user.myapplication.R.layout.layoutitem;
 
 public class ListActivity extends Activity {
 
@@ -38,19 +32,20 @@ public class ListActivity extends Activity {
 
         final ArrayList<Todo> mListe = new ArrayList<>();
 
-        Todo t1 = new Todo("faire les courses");
-        Todo t2 = new Todo("action 1");
-        Todo t3 = new Todo("action 2");
-        Todo t4 = new Todo("action 3");
-        Todo t5 = new Todo("action 4");
+/*
+//        Todo t1 = new Todo("faire les courses");
+//        Todo t2 = new Todo("action 1");
+//        Todo t3 = new Todo("action 2");
+//        Todo t4 = new Todo("action 3");
+//        Todo t5 = new Todo("action 4");
+//
+//        mListe.add(t1);
+//        mListe.add(t2);
+//        mListe.add(t3);
+//        mListe.add(t4);
+//        mListe.add(t5);
 
-        mListe.add(t1);
-        mListe.add(t2);
-        mListe.add(t3);
-        mListe.add(t4);
-        mListe.add(t5);
-
-       t4.changeStateB(false);
+       t4.changeStateB(false);*/
 
         //ArrayAdapter<Todo>
         adapter = new TodoAdapter(this, mListe);

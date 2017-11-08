@@ -1,17 +1,17 @@
 package com.example.user.myapplication;
 
 import android.app.Activity;
-import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.user.myapplication.model.Album;
+import com.example.user.myapplication.mysqlite.SqliteActivity;
+import com.example.user.myapplication.todolist.ListActivity;
+import com.example.user.myapplication.albumpackage.AlbumActivity;
 
 public class Exo1activity extends Activity {
 
@@ -29,6 +29,8 @@ public class Exo1activity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exo1activity);
+
+
         if(null!=savedInstanceState)
         {
             int recuperation = savedInstanceState.getInt("key");
@@ -126,6 +128,15 @@ public class Exo1activity extends Activity {
                 startActivity(i);
             }
         });
+        findViewById(R.id.btnMainSqlite).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(v.getContext(), SqliteActivity.class);
+                startActivity(i);
+            }
+        });
+
+
     }
 
 
