@@ -13,17 +13,20 @@ import java.util.List;
 
 public class MovieDAO {
 
-    private static final String TABLE_NAME = "Movies";
+    public static final String TABLE_NAME = "Movies";
     public static final String COLUMN_NAME_TITLE = "title";
-    public static final String COLUMN_NAME_ID = "id";
+    public static final String COLUMN_NAME_ID = "_id";
 
     // les méthodes statiques ici ont pour but d'effectuer
 // des requetes SQL pour gérer les données, les tables
 
     public static void create(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + "(" +
-                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_NAME_TITLE + " TEXT NOT NULL )");
+//        db.execSQL("CREATE TABLE " + TABLE_NAME + "(" +
+//                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+//                COLUMN_NAME_TITLE +" TEXT NOT NULL )");
+        db.execSQL(new StringBuilder("CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ( _id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_NAME_TITLE + " TEXT NOT NULL )").toString());
+
     }
 
     public static void drop(SQLiteDatabase db) {
@@ -32,14 +35,16 @@ public class MovieDAO {
 
     public static void insert(SQLiteDatabase db, Movie m)
     {
+
+        System.out.println("insert" + m);
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME_TITLE, m.getMovieTitle());
-        values.putNull("id");
+        values.putNull("_id");
         db.insert(TABLE_NAME, null, values);
     }
     public static void deleteFromId(SQLiteDatabase db, long id)
     {
-        db.delete(TABLE_NAME, "id = ?", new String[] { String.valueOf(id) });
+        db.delete(TABLE_NAME, "_id = ?", new String[] { String.valueOf(id) });
     }
     public static void deleteFromTitle(SQLiteDatabase db, String title)
     {

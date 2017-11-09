@@ -8,9 +8,34 @@
 
     <GridView
         android:id="@+id/gridViewSql"
+        android:numColumns="2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
     </GridView>
+
+<android.support.v7.widget.LinearLayoutCompat
+
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/btnAddMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:text="Ajouter un film" android:layout_alignParentStart="false"/>
+
+    <Button
+        android:id="@+id/btnRfsMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="false"
+        android:text="Refresh list"
+        tools:layout_alignParentRight="false" />
+</android.support.v7.widget.LinearLayoutCompat>
 
 </RelativeLayout>

@@ -11,7 +11,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
-
     // nom du fichier contenant la base de données
     private static final String DB_NAME = "myFirstDB.db";
     private static final int DB_VERSION = 1;
@@ -20,15 +19,16 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         super(context, DB_NAME, null, DB_VERSION );
     }
 
-
-
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        MovieDAO.create(db);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        MovieDAO.drop(db);
+        onCreate(db);
+//en prod on ferait plutot un alterTable si nécéssaire
 
     }
 }

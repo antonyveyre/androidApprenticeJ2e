@@ -17,6 +17,7 @@ import com.example.user.myapplication.R;
 public class CustomAdapter extends CursorAdapter {
 
     private LayoutInflater mInflater;
+
     public CustomAdapter(Context context, Cursor cursor ) {
         super(context, cursor, 0);
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
